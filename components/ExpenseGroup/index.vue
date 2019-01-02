@@ -10,15 +10,15 @@
         <div v-for="(item, i) in expenseArray" :key="i" class=" border-b flex justify-between text-left">
             <div class="w-1/4 p-4">
                 <span v-if="!item.isEditable" >{{item.itemName}}</span>
-                <input v-else type="text" v-model="item.itemName" @keyup.enter="editToggle(item)" />
+                <input v-else type="text" v-model="item.itemName" @keyup.enter="editToggle(item)" class="border"/>
             </div>
             <div class="w-1/4 p-4">
                 <span v-if="!item.isEditable" >{{item.itemDesc}}</span>
-                <input v-else type="text" v-model="item.itemDesc" @keyup.enter="editToggle(item)" />
+                <input v-else type="text" v-model="item.itemDesc" @keyup.enter="editToggle(item)" class="border" />
             </div>
             <div class="w-1/4 p-4">
                 <span v-if="!item.isEditable">{{item.itemVal}}</span>
-                <input v-else type="number" v-model="item.itemVal" @keyup.enter="editToggle(item)" />
+                <input v-else type="number" v-model="item.itemVal" @keyup.enter="editToggle(item)" class="border" />
             </div>
             <button type="button" @click="editToggle(item)" class="w-1/4 text-left p-4">{{ item.isEditable ? 'SAVE' : 'EDIT' }}</button>
         </div>
